@@ -25,27 +25,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create release branch
-        run: git checkout -b release/BuildTest
-        
-      - name: Initialize mandatory git config
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email noreply@github.com
-
-      # Runs a set of commands using the runners shell
-      - name: Add file
-        run: touch i
-        
-      - name: commit
-        run: |
-          git add i
-          git commit --message "Test"
-          
-      - name: push
-        run: git push origin release/BuildTest
-        
-      - name: create PR
-        run: |
-          gh pr create -t "Preparing for" -b "build"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: /usr/libexec/PlistBuddy -c
